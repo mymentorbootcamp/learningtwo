@@ -15,3 +15,7 @@ RUN php artisan key:generate
 RUN chmod -R 777 storage
 RUN a2enmod rewrite
 RUN service apache2 restart
+CMD php artisan serve --host=0.0.0.0
+EXPOSE $PORT
+COPY wrapper.sh /
+CMD ["/bin/bash","./wrapper.sh"]
