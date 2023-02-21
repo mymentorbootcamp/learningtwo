@@ -1,5 +1,3 @@
 #!/bin/bash
 
-echo "Nginx is running..."
-
-exec nginx -g "daemon off;"
+exec php artisan serve --host=0.0.0.0
